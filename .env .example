@@ -10,3 +10,10 @@ DB_PORT=3306
 DB_DATABASE=web_top_game
 DB_USERNAME=root
 DB_PASSWORD=
+
+TRIPAY_API_KEY=your_tripay_api_key
+TRIPAY_PRIVATE_KEY=your_tripay_private_key
+TRIPAY_MERCHANT_CODE=your_merchant_code
+
+DIGIFLAZZ_USERNAME=your_digiflazz_username
+DIGIFLAZZ_API_KEY=your_digiflazz_apikey
