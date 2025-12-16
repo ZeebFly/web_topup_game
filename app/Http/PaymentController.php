@@ -12,14 +12,12 @@ class PaymentController extends Controller
     {
         $data = $request->all();
 
-        // Cek status pembayaran
         $trx = Transaction::where('invoice', $data['merchant_ref'])->first();
         if(!$trx) return response()->json(['error' => 'Transaction not found'], 404);
 
-        $trx->payment_status = $data['status']; // success / pending / failed
+        $trx->payment_status = $data['status'];
         $trx->save();
 
-        // Jika sukses, lakukan topup via Digiflazz
         if($data['status'] == 'PAID'){
             $digiflazz = new DigiflazzService();
             $res = $digiflazz->topup($trx->product->sku, $trx->user_id);
