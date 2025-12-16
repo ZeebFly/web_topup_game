@@ -1,3 +1,5 @@
+<?php
+
 use App\Services\TripayService;
 
 public function store(Request $request)
